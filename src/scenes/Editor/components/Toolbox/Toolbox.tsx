@@ -1,4 +1,4 @@
-import { useEditorContext } from '@scenify/sdk'
+import { useEditorContext } from '@rovahub/scenify-sdk'
 import { styled } from 'baseui'
 import ToolboxItems from './ToolboxItems'
 

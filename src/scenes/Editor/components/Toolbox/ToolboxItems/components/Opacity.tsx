@@ -2,7 +2,7 @@ import Icons from '../../../icons'
 import { Button, SHAPE, KIND, SIZE } from 'baseui/button'
 import { StatefulPopover, PLACEMENT } from 'baseui/popover'
 import { Slider } from 'baseui/slider'
-import { useHandlers, useActiveObject } from '@scenify/sdk'
+import { useHandlers, useActiveObject } from '@rovahub/scenify-sdk'
 import { useEffect, useState } from 'react'
 
 function Opacity() {

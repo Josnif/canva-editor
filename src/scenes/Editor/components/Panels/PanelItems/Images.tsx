@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { Input } from 'baseui/input'
 import Icons from '@components/icons'
-import { useHandlers } from '@scenify/sdk'
+import { useHandlers } from '@rovahub/scenify-sdk'
 import { getPixabayImages, PixabayImage } from '@/services/pixabay'
 import { useDebounce } from 'use-debounce'
 

@@ -5,7 +5,7 @@ import { Input } from 'baseui/input'
 import { StatefulPopover, PLACEMENT } from 'baseui/popover'
 import { useEffect, useState } from 'react'
 import formatSizes from '@/constants/format-sizes'
-import { useEditorContext, useHandlers } from '@scenify/sdk'
+import { useEditorContext, useHandlers } from '@rovahub/scenify-sdk'
 
 const getLabel = ({ option }: any) => {
   return (

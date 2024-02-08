@@ -1,7 +1,7 @@
 import Icons from '../../../icons'
 import { Button, KIND, SIZE } from 'baseui/button'
 import { StatefulPopover, PLACEMENT } from 'baseui/popover'
-import { useHandlers } from '@scenify/sdk'
+import { useHandlers } from '@rovahub/scenify-sdk'
 
 function Position() {
   const handlers = useHandlers()

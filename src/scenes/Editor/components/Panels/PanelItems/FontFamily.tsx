@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { Input } from 'baseui/input'
 import Icons from '@components/icons'
-import { useHandlers } from '@scenify/sdk'
+import { useHandlers } from '@rovahub/scenify-sdk'
 import { editorFonts } from '@/constants/editor'
 import { styled } from 'baseui'
 function FontFamily() {

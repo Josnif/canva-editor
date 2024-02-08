@@ -1,4 +1,4 @@
-import { useHandlers } from '@scenify/sdk'
+import { useHandlers } from '@rovahub/scenify-sdk'
 import { Button, SHAPE, KIND, SIZE } from 'baseui/button'
 import Icons from '../../../icons'
 
