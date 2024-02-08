@@ -23,7 +23,7 @@ const colors = [
 function Background() {
   const [color, setColor] = useState('#b32aa9')
   const [value, setValue] = useState('')
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
 
   const updateBackgrounColor = throttle((color: string) => {
     handlers.frameHandler.setBackgroundColor(color)

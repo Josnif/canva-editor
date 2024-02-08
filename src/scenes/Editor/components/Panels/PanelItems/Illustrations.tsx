@@ -11,7 +11,7 @@ function Illustrations() {
   const [objects, setObjects] = useState<any[]>([])
   const [value] = useDebounce(search, 1000)
 
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   useEffect(() => {
     getImages('people')
       .then((data: any) => setObjects(data))
@@ -32,7 +32,7 @@ function Illustrations() {
           type: 'StaticVector',
           metadata: { src: url },
         }
-        handlers.objectsHandler.create(options)
+        handlers.objectsHandler.add(options)
       })
       .catch(console.log)
   }

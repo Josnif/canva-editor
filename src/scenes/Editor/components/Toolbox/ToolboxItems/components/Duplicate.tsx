@@ -3,7 +3,7 @@ import { Button, SHAPE, KIND, SIZE } from 'baseui/button'
 import Icons from '../../../icons'
 
 function Duplicate() {
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   return (
     <Button
       onClick={() => {

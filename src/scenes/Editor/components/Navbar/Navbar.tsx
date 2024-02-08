@@ -24,13 +24,14 @@ const LogoContainer = styled('div', props => ({
 }))
 
 function NavbarEditor() {
-  const handlers = useHandlers()
+  const editor = useHandlers()
+  const handlers = useHandlers()?.handlers
   const { templates, setTemplates } = useAppContext()
   const [saving, setSaving] = useState(false)
 
   const downloadImage = async () => {
-    if (handlers) {
-      const data = await handlers.designHandler.toDataURL()
+    if (handlers) {      
+      const data = await handlers.designHandler.toDataURL(templates)
       if (data) {
         const a = document.createElement('a')
         a.href = data
@@ -43,7 +44,7 @@ function NavbarEditor() {
   const handleSave = async () => {
     if (handlers) {
       setSaving(true)
-      const exportedTemplate = handlers.templateHandler.exportTemplate()
+      const exportedTemplate = handlers.templateHandler.exportToJSON()
       const savedTemplate = await api.createTemplate(exportedTemplate)
       setTemplates([...templates, savedTemplate])
       setSaving(false)
@@ -60,7 +61,7 @@ function NavbarEditor() {
           <div>
             <Button
               onClick={() => {
-                handlers.transactionHandler.undo()
+                editor.undo()
               }}
               size={SIZE.default}
               kind={KIND.tertiary}
@@ -70,7 +71,7 @@ function NavbarEditor() {
             </Button>
             <Button
               onClick={() => {
-                handlers.transactionHandler.redo()
+                editor.redo()
               }}
               size={SIZE.default}
               kind={KIND.tertiary}

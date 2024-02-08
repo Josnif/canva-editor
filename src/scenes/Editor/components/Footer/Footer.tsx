@@ -32,7 +32,7 @@ function Footer() {
   return (
     <Container>
       <div style={{ display: 'flex', alignItems: 'center', border: '1px solid rgba(0,0,0,0.1)' }}>
-        <Button onClick={() => handlers.zoomHandler.zoomOut()} size={SIZE.compact} kind={KIND.tertiary}>
+        <Button onClick={() => handlers.zoom.zoomOut()} size={SIZE.compact} kind={KIND.tertiary}>
           <CheckIndeterminate size={20} />
         </Button>
         <StatefulPopover
@@ -51,7 +51,7 @@ function Footer() {
               <Scrollbars>
                 <ZoomItemContainer
                   onClick={() => {
-                    handlers.zoomHandler.zoomToFit()
+                    handlers.zoom.zoomToFit()
                     close()
                   }}
                 >
@@ -60,7 +60,7 @@ function Footer() {
                 {zoomValues.map(zv => (
                   <ZoomItemContainer
                     onClick={() => {
-                      handlers.zoomHandler.zoomToRatio(zv)
+                      handlers.zoom.zoomToRatio(zv)
                       close()
                     }}
                     key={zv}
@@ -93,7 +93,7 @@ function Footer() {
             {Math.round(zoomRatio * 100) + '%'}
           </Button>
         </StatefulPopover>
-        <Button onClick={() => handlers.zoomHandler.zoomIn()} size={SIZE.compact} kind={KIND.tertiary}>
+        <Button onClick={() => handlers.zoom.zoomIn()} size={SIZE.compact} kind={KIND.tertiary}>
           <Plus size={20} />
         </Button>
       </div>

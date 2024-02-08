@@ -53,7 +53,7 @@ function Text() {
   const { setActiveSubMenu } = useAppContext()
   const activeObject = useActiveObject<fabric.TextOptions>()
   const [options, setOptions] = useState<TextOptions>(defaultOptions)
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   useEffect(() => {
     updateOptions(activeObject)
   }, [activeObject])
@@ -85,11 +85,11 @@ function Text() {
 
   const toggleBold = () => {
     const isBold = checkBold(options.fontWeight)
-    handlers.objectsHandler.updateActive({ fontWeight: isBold ? 400 : 700 })
+    handlers.objectsHandler.update({ fontWeight: isBold ? 400 : 700 })
   }
 
   const toggleUnderline = () => {
-    handlers.objectsHandler.updateActive({ underline: activeObject.underline ? false : true })
+    handlers.objectsHandler.update({ underline: activeObject.underline ? false : true })
   }
 
   const checkIsItalic = (value: string) => {
@@ -99,7 +99,7 @@ function Text() {
 
   const toggleItalic = () => {
     const isItalic = checkIsItalic(activeObject.fontStyle)
-    handlers.objectsHandler.updateActive({ fontStyle: isItalic ? 'normal' : 'italic' })
+    handlers.objectsHandler.update({ fontStyle: isItalic ? 'normal' : 'italic' })
   }
 
   const getNextTextAlign = (current: string) => {
@@ -112,7 +112,7 @@ function Text() {
   const toggleTextAlign = () => {
     const currentValue = activeObject.textAlign
     const nextTextAlign = getNextTextAlign(currentValue)
-    handlers.objectsHandler.updateActive({ textAlign: nextTextAlign })
+    handlers.objectsHandler.update({ textAlign: nextTextAlign })
   }
 
   const getTextAlignIcon = () => {
@@ -129,7 +129,7 @@ function Text() {
   }
 
   const updateFontSize = (value: number) => {
-    handlers.objectsHandler.updateActive({ fontSize: value })
+    handlers.objectsHandler.update({ fontSize: value })
   }
 
   const TextAlignIcon = getTextAlignIcon()

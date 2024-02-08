@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 function Opacity() {
   const [value, setValue] = useState([1])
   const activeObject = useActiveObject()
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
 
   useEffect(() => {
     updateOptions(activeObject)
@@ -28,7 +28,7 @@ function Opacity() {
 
   const updateOpacity = (value: number[]) => {
     const opacityValue = value[0] / 100
-    handlers.objectsHandler.updateActive({ opacity: opacityValue })
+    handlers.objectsHandler.update({ opacity: opacityValue })
   }
 
   return (

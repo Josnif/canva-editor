@@ -23,10 +23,10 @@ const colors = [
 function Color() {
   const [color, setColor] = useState('#b32aa9')
   const [value, setValue] = useState('')
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
 
   const updateObjectFill = throttle((color: string) => {
-    handlers.objectsHandler.updateActive({ fill: color })
+    handlers.objectsHandler.update({ fill: color })
     setColor(color)
   }, 100)
 
@@ -116,7 +116,7 @@ function Color() {
           >
             {colors.map(color => (
               <div
-                onClick={() => handlers.objectsHandler.updateActive({ fill: color })}
+                onClick={() => handlers.objectsHandler.update({ fill: color })}
                 key={color}
                 style={{ height: '42px', background: color, borderRadius: '4px', cursor: 'pointer' }}
               ></div>

@@ -11,7 +11,7 @@ function Images() {
   const [images, setImages] = useState<PixabayImage[]>([])
   const [value] = useDebounce(search, 1000)
 
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   useEffect(() => {
     getPixabayImages('people')
       .then(data => setImages(data))
@@ -31,7 +31,7 @@ function Images() {
       type: 'StaticImage',
       metadata: { src: url },
     }
-    handlers.objectsHandler.create(options)
+    handlers.objectsHandler.add(options)
   }
 
   return (

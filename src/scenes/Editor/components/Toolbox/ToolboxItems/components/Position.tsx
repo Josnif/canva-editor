@@ -4,7 +4,7 @@ import { StatefulPopover, PLACEMENT } from 'baseui/popover'
 import { useHandlers } from '@rovahub/scenify-sdk'
 
 function Position() {
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   return (
     <StatefulPopover
       focusLock

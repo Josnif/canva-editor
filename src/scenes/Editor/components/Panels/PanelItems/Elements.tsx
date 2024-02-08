@@ -8,7 +8,7 @@ import { useHandlers } from '@rovahub/scenify-sdk'
 function Panel() {
   const [value, setValue] = useState('')
   const { shapes } = useAppContext()
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   return (
     <div style={{ display: 'flex', height: '100%', flexDirection: 'column' }}>
       <div style={{ padding: '2rem 2rem' }}>
@@ -36,7 +36,7 @@ function Panel() {
                   display: 'flex',
                   justifyContent: 'center',
                 }}
-                onClick={() => handlers.objectsHandler.create(shape)}
+                onClick={() => handlers.objectsHandler.add(shape)}
               >
                 <img
                   width="80px"

@@ -7,7 +7,7 @@ import { editorFonts } from '@/constants/editor'
 import { styled } from 'baseui'
 function FontFamily() {
   const [value, setValue] = useState('')
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   return (
     <div style={{ display: 'flex', height: '100%', flexDirection: 'column' }}>
       <div style={{ padding: '2rem 2rem' }}>
@@ -26,7 +26,7 @@ function FontFamily() {
               <FontItem
                 key={font.name}
                 style={{ fontFamily: font.name }}
-                onClick={() => handlers.objectsHandler.updateActive({ fontFamily: font.name })}
+                onClick={() => handlers.objectsHandler.update({ fontFamily: font.name })}
               >
                 <img src={font.preview || 'https://via.placeholder.com/150'} alt="preview" />
               </FontItem>

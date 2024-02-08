@@ -7,7 +7,7 @@ import { useState } from 'react'
 function Panel() {
   const [value, setValue] = useState('')
 
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
 
   const addHeading = () => {
     const options = {
@@ -21,7 +21,7 @@ function Panel() {
         value: 'Add a heading',
       },
     }
-    handlers.objectsHandler.create(options)
+    handlers.objectsHandler.add(options)
   }
 
   const addSubheading = () => {
@@ -36,7 +36,7 @@ function Panel() {
         textAlign: 'center',
       },
     }
-    handlers.objectsHandler.create(options)
+    handlers.objectsHandler.add(options)
   }
 
   const addTextBody = () => {
@@ -51,7 +51,7 @@ function Panel() {
         textAlign: 'center',
       },
     }
-    handlers.objectsHandler.create(options)
+    handlers.objectsHandler.add(options)
   }
   return (
     <div style={{ display: 'flex', height: '100%', flexDirection: 'column' }}>

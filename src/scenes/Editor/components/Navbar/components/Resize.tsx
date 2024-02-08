@@ -33,11 +33,11 @@ export default function Resize() {
   const updateFormatSize = value => {
     setValue(value)
     const [frame] = value
-    handlers.frameHandler.update(frame.size)
+    handlers.frame.update(frame.size)
   }
   const applyCustomSize = () => {
     if (customSize.width && customSize.height) {
-      handlers.frameHandler.update(customSize)
+      handlers.frame.update(customSize)
     }
   }
   useEffect(() => {

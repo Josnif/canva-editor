@@ -8,7 +8,7 @@ import { useHandlers } from '@rovahub/scenify-sdk'
 function Templates() {
   const { templates } = useAppContext()
   const [value, setValue] = useState('')
-  const handlers = useHandlers()
+  const handlers = useHandlers()?.handlers
   return (
     <div style={{ display: 'flex', height: '100%', flexDirection: 'column' }}>
       <div style={{ padding: '2rem 2rem' }}>
@@ -34,7 +34,7 @@ function Templates() {
                   border: '1px solid rgba(0,0,0,0.2)',
                   padding: '5px',
                 }}
-                onClick={() => handlers.templateHandler.importTemplate(template)}
+                onClick={() => handlers.templateHandler.importFromJSON(template)}
               >
                 <img width="100%" src={template.preview || 'https://via.placeholder.com/150'} alt="preview" />
               </div>
